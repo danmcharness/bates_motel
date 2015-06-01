@@ -1,0 +1,18 @@
+
+See:
+http://ionicframework.com/docs/concepts/structure.html
+http://ionicframework.com/docs/guide/installation.html
+
+project top level structure:
+
+├── bower.json     // web package manager specification file
+├── .bowerrc       // bower configuration file
+├── config.xml     // cordova configuration file
+├── gulpfile.js    // gulp build runner tasks definition file
+├── hooks          // custom cordova hooks to execute on specific commands
+├── ionic.project  // ionic configuration
+├── package.json   // node dependencies
+├── platforms      // iOS/Android specific builds will reside here
+├── plugins        // where your cordova/ionic plugins will be installed
+├── scss           // scss code, which will output to www/css/
+└── www            // application - JS code and libs, CSS, images, etc.

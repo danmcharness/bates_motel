@@ -1,0 +1,38 @@
+
+<!--Use ionView to declare a view template, title is used in navbar -->
+<!--(index.html) and hide-back-button will disable the back button -->
+<!--since this is the top level view.-->
+
+<ion-view view-title="Bates Motel" hide-back-button="true">
+
+  <!--ionContent is the most commonly used content container.-->
+  <!--It provides:-->
+    <!--Sizes content area to device-->
+    <!--Aware of header and footer bars-->
+    <!--Manages scrolling-->
+
+  <!--The content area will now resize and take the navbar into consideration -->
+  <!--when it calculates the size and position of the content. Without it, -->
+  <!--the content would start in the top left corner behind the navbar-->
+
+  <ion-content>
+
+    <!--Add the list class to a container element to designate a list container-->
+    <div class="list">
+
+      <!--Add the item class to an element to create a list item, in this case a link to another view-->
+      <a href="#/reservation" class="item item-icon-left">
+
+        <!--view the available icons at http://ionicons.com-->
+        <!--the italics element is transformed by the icon class, with the 2nd class the specific icon-->
+        <i class="icon ion-document-text"></i> See your reservation
+      </a>
+      <a href="#/weather" class="item item-icon-left">
+        <i class="icon ion-ios-partlysunny"></i> Current weather
+      </a>
+      <a href="#/restaurants" class="item item-icon-left">
+        <i class="icon ion-fork"></i> Nearby restaurants
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

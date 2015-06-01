@@ -1,0 +1,13 @@
+
+Note about file organization
+----------------------------
+Other than the top level application files (index.html & app.js) all application files are organized by views
+(./www/views/), so that all related parts are kept together. For example see: ./www/views/reservation
+
+
+The top-level source files are:
+  ./www/index.html
+  ./www/js/app.js
+
+The top-level view (template):
+  ./www/views/home/home.html

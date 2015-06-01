@@ -1,0 +1,77 @@
+
+
+1. Setting up a connected device for development:
+-------------------------------------------------
+  https://developer.android.com/tools/device.html
+
+  A. Enable USB debugging on your device.
+
+    On most devices running Android 3.2 or older, you can find the option under Settings > Applications > Development.
+    On Android 4.0 and newer, it's in Settings > Developer options.
+      Note: On Android 4.2 and newer, Developer options is hidden by default. To make it available,
+      go to Settings > About phone and tap Build number seven times. Return to the previous screen to find Developer options.
+
+  B. Set up your system to detect your device.
+
+    If you're developing on Ubuntu Linux, you need to add a udev rules file that contains a USB configuration for each
+    type of device you want to use for development.
+    In the rules file, each device manufacturer is identified by a unique vendor ID, as specified by the ATTR{idVendor}
+    property. For a list of vendor IDs, see USB Vendor IDs, below.
+
+    To set up device detection on Ubuntu Linux:
+
+      Log in as root and create this file: /etc/udev/rules.d/51-android.rules.
+      Use this format to add each vendor to the file:
+
+        SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"  // vendor ID for HTC
+
+        SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="plugdev"  // vendor ID for ASUS
+
+    The MODE assignment specifies read/write permissions, and GROUP defines which Unix group owns the device node.
+
+  C: Verify device connection.
+
+    Connect device to development machine via usb ports.
+    To confirm the device is connected:
+
+      adb devices
+
+    You should see a list of devices, and if you’ve setup any emulators they should appear as well.
+    Emulators are prefixed with ‘emulator-‘ while actual devices are a hash.
+
+        List of devices attached
+        F4NKBC062471	device
+
+
+2. Adding a platform to the project
+-----------------------------------
+> ionic platform add android
+
+output:
+Updated the hooks directory to have execute permissions
+Downloading Default Ionic Resources
+Downloading: https://github.com/driftyco/ionic-default-resources/archive/master.zip
+[=============================]  100%  0.0s
+Done adding default Ionic resources
+Adding icons for platform: android
+npm http GET https://registry.npmjs.org/cordova-android/4.0.0
+npm http 200 https://registry.npmjs.org/cordova-android/4.0.0
+npm http GET https://registry.npmjs.org/cordova-android/-/cordova-android-4.0.0.tgz
+npm http 200 https://registry.npmjs.org/cordova-android/-/cordova-android-4.0.0.tgz
+Adding android project...
+Creating Cordova project for the Android platform:
+	Path: platforms/android
+	Package: com.ionicframework.batesmotel479134
+	Name: bates_motel
+	Activity: MainActivity
+	Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.0.0
+Running command: /home/puddle/work-spaces/ws-ionic/ionic-in-action/bates_motel/hooks/after_prepare/010_add_platform_class.js /home/puddle/work-spaces/ws-ionic/ionic-in-action/bates_motel
+add to body class: platform-android
+Installing "com.ionic.keyboard" for android
+Installing "cordova-plugin-console" for android
+Installing "cordova-plugin-device" for android
+Installing "cordova-plugin-splashscreen" for android
+Installing "cordova-plugin-whitelist" for android
+Saving platform to package.json file
