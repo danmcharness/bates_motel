@@ -1,0 +1,38 @@
+<ion-view view-title="Local Restaurants">
+    <ion-content>
+
+        <!--create a card for each restaurant-->
+        <div class="list card" ng-repeat="restaurant in restaurants">
+
+            <!--each card is its own list & cards have items-->
+
+            <div class="item">
+                <h2>{{restaurant.name}}</h2>
+                <p>{{restaurant.address}}, {{restaurant.city}}</p>
+            </div>
+            <div class="item item-image">
+                <img ng-src="{{restaurant.image_url}}" />
+            </div>
+
+        </div>
+
+        <!--
+        will call getRestaurants() when within a certain distance of the bottom, until reaching the end of the list.
+        by default, if the component is within 1% of the view area, then it will call the declared method.
+        Since initially the view won’t have any restaurants, it will show a loading indicator and make a call to the
+        getRestaurants() method to load the initial set.
+
+        Due to a quirky behavior of the infinite scroll, it can actually call the method twice on load.
+        To fix this, we disable the infinite scroll from loading initially setting the immediate-check attribute to
+        false, and we will have the controller load the data.
+
+        The infinite scroll component will continue to request data as long as it returns and anytime it becomes visible.
+        However, when there are no more items to load we want to stop the component from loading anymore.
+        The ngIf statement is how we will disable infinite scroll when we reach the end of our available data from the
+        service. We will handle the logic in this controller, but the API is returning a value which indicates how many
+        pages of data are available so we can check that against how many have already loaded.
+        -->
+
+        <ion-infinite-scroll on-infinite="getRestaurants()" ng-if="total < page" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -33,6 +33,11 @@ angular.module('App', ['ionic'])
       url: '/weather',
       controller: 'WeatherController',
       templateUrl: 'views/weather/weather.html'
+    })
+    .state('restaurants', {
+      url: '/restaurants',
+      controller: 'RestaurantsController',
+      templateUrl: 'views/restaurants/restaurants.html'
     });
 
     //The otherwise is important because it is able to catch situations where the application is
