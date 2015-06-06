@@ -38,13 +38,17 @@ angular.module('App', ['ionic'])
       url: '/restaurants',
       controller: 'RestaurantsController',
       templateUrl: 'views/restaurants/restaurants.html'
+    })
+    .state('tour', {
+      url: '/tour',
+      templateUrl: 'views/tour/tour.html'
     });
 
     //The otherwise is important because it is able to catch situations where the application is
     //unable to find the requested route, much like a 404 error page on a website. If the user tries to
-    //request a state that doesn’t exist, the otherwise route will be used to display the home view.
+    //request a state that doesn’t exist, the otherwise route will be used to display the tour view.
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/tour')
 })
 
 //auto-generated boot run

@@ -1,0 +1,24 @@
+
+/*
+  The CSS here makes our icons large and centers the content, as well as making the slide
+  box full height. This is helpful so the user can swipe on the whole screen (except the header
+  bar) in order to change the current slide, otherwise they would have to swipe only on the
+  content itself.
+*/
+
+/*Styles to make our slider full height*/
+#tour-view .slider {
+    height: 100%;
+}
+
+/*Provides padding for the top of the slide and center the content*/
+#tour-view .slider-slide {
+    padding-top: 100px;
+    text-align: center;
+}
+
+/*Make the icons large and display as inline blocks*/
+#tour-view .icon-slide {
+    font-size: 20em;
+    display: inline-block;
+}

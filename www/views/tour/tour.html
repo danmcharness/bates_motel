@@ -1,0 +1,33 @@
+
+<!--tour-specific css-->
+<ion-view view-title="Welcome to Bates Motel" id="tour-view">
+
+    <!--button that allows the user to go to the home view-->
+    <ion-nav-buttons side="right">
+        <a class="button button-clear" href="#/home" nav-clear>Start</a>
+    </ion-nav-buttons>
+
+    <!--The ionSlideBox acts as our content wrapper and slide box container, using the pager-->
+    <ion-slide-box show-pager="true">
+
+        <!--
+          Each ionSlide is automatically added as a new slide to the slide box
+          The slide box will only be as large as the content inside of it is calculated.
+          Since the icon and header tags are standard HTML elements, they will only make the
+          slide box as tall as the text itself.
+        -->
+
+        <ion-slide>
+            <span class="icon icon-slide ion-document-text"></span>
+            <h3>See your Reservation</h3>
+        </ion-slide>
+        <ion-slide>
+            <span class="icon icon-slide ion-fork"></span>
+            <h3>Find local restaurants</h3>
+        </ion-slide>
+        <ion-slide>
+            <span class="icon icon-slide ion-ios-sunny"></span>
+            <h3>Get the weather</h3>
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>
